@@ -1,0 +1,238 @@
+Microsoft Windows [Version 10.0.19045.6466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\CyberWiz>mysql -u root -p
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database butterfly;
+Query OK, 1 row affected (0.07 sec)
+mysql> create table students(
+    -> studentid int PRIMARY KEY,
+    -> firstname varchar(225),
+    -> lastname varchar(225) NOT NUll,
+    -> address varchar(225),
+    -> age int);
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| butterfly          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use butterfly;
+Database changed
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.11 sec)
+
+mysql> insert into students (studentid,firstname,lastname,address,age)values
+    -> (100,"soumya","bastwad","bailhongal",20),
+    -> (102,"sichana","gundakalle","goa",20);
+Query OK, 2 rows affected (0.04 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select *from students;
++-----------+-----------+------------+------------+------+
+| studentid | firstname | lastname   | address    | age  |
++-----------+-----------+------------+------------+------+
+|       100 | soumya    | bastwad    | bailhongal |   20 |
+|       102 | sichana   | gundakalle | goa        |   20 |
++-----------+-----------+------------+------------+------+
+2 rows in set (0.00 sec)
+
+mysql> select abs(-44) from dual;
++----------+
+| abs(-44) |
++----------+
+|       44 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select power(2,4) from dual;
++------------+
+| power(2,4) |
++------------+
+|         16 |
++------------+
+1 row in set (0.01 sec)
+
+mysql> select sqrt(16) from dual;
++----------+
+| sqrt(16) |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select exp(4) from dual;
++--------------------+
+| exp(4)             |
++--------------------+
+| 54.598150033144236 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select GREATEST(3,12,34,8,25) from dual;
++------------------------+
+| GREATEST(3,12,34,8,25) |
++------------------------+
+|                     34 |
++------------------------+
+1 row in set (0.01 sec)
+
+mysql> select least(3,12,34,8,25) from dual;
++---------------------+
+| least(3,12,34,8,25) |
++---------------------+
+|                   3 |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> select round(4.7) from dual;
++------------+
+| round(4.7) |
++------------+
+|          5 |
++------------+
+1 row in set (0.01 sec)
+
+mysql> select lower('HELP4CODE ELEARNING') from dual;
++------------------------------+
+| lower('HELP4CODE ELEARNING') |
++------------------------------+
+| help4code elearning          |
++------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select upper('help4code') from dual;
++--------------------+
+| upper('help4code') |
++--------------------+
+| HELP4CODE          |
++--------------------+
+1 row in set (0.01 sec)
+
+mysql> select rtrim('Help4code Elearning234') from dual;
++---------------------------------+
+| rtrim('Help4code Elearning234') |
++---------------------------------+
+| Help4code Elearning234          |
++---------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select ascii('A') from dual;
++------------+
+| ascii('A') |
++------------+
+|         65 |
++------------+
+1 row in set (0.04 sec)
+
+mysql> select ascii('t') from dual;
++------------+
+| ascii('t') |
++------------+
+|        116 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select ascii('A') from dual;
++------------+
+| ascii('A') |
++------------+
+|         65 |
++------------+
+1 row in set (0.04 sec)
+
+mysql> select ascii('t') from dual;
++------------+
+| ascii('t') |
++------------+
+|        116 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select 30 +20 from dual;
++--------+
+| 30 +20 |
++--------+
+|     50 |
++--------+
+1 row in set (0.01 sec)
+
+mysql> select 30-20 from dual;
++-------+
+| 30-20 |
++-------+
+|    10 |
++-------+
+1 row in set (0.01 sec)
+
+mysql> select 2%5 from dual;
++------+
+| 2%5  |
++------+
+|    2 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select 2*5 from dual;
++-----+
+| 2*5 |
++-----+
+|  10 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> insert into students (studentid,firstname,lastname,address,age)values
+    -> (105,"pinky","badakke","mole",20),
+    -> (108,"shreya","angadi","kittur",20),
+    -> (098,"tania","davi","jammu",20);
+Query OK, 3 rows affected (0.06 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select *from students;
++-----------+-----------+------------+------------+------+
+| studentid | firstname | lastname   | address    | age  |
++-----------+-----------+------------+------------+------+
+|        98 | tania     | davi       | jammu      |   20 |
+|       100 | soumya    | bastwad    | bailhongal |   20 |
+|       102 | sichana   | gundakalle | goa        |   20 |
+|       105 | pinky     | badakke    | mole       |   20 |
+|       108 | shreya    | angadi     | kittur     |   20 |
++-----------+-----------+------------+------------+------+
+5 rows in set (0.01 sec)
+
+mysql> select * from students where address='kittur';
++-----------+-----------+----------+---------+------+
+| studentid | firstname | lastname | address | age  |
++-----------+-----------+----------+---------+------+
+|       108 | shreya    | angadi   | kittur  |   20 |
++-----------+-----------+----------+---------+------+
+1 row in set (0.02 sec)
